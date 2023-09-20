@@ -1,8 +1,10 @@
+import Navbar from "../components/Navbar/Navbar";
 import Homecards from "../components/home/Homecards";
 
 const Home = () => {
   return (
-    <div className="container mx-auto">
+    <div>
+      <Navbar />
       <Homecards />
     </div>
   );
