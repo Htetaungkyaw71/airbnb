@@ -1,28 +1,13 @@
-import { Suspense, lazy, useEffect, useState } from "react";
-import { useGetHomeQuery } from "../../services/homeApiServices";
-// import Card from "./Card";
+import { Suspense, lazy } from "react";
+import useGethomes from "./custom_hooks/getAllhomes";
 
 const Homecards = () => {
-  const [page, setPage] = useState(1);
-  const { data, isLoading } = useGetHomeQuery({ page, pageSize: 5 });
-
-  const [allHomes, setAllHomes] = useState([]);
-  const totalCount = data?.totalCount;
-  const homes = data?.data;
-
   const Card = lazy(() => import("./Card"));
+  const [allHomes, setPage, totalCount, isLoading] = useGethomes();
 
   const handleMore = () => {
-    setPage(page + 1);
+    setPage((prev) => prev + 1);
   };
-
-  useEffect(() => {
-    if (homes) {
-      setAllHomes((prev) => {
-        return [...prev, ...homes];
-      });
-    }
-  }, [homes]);
 
   if (isLoading) {
     return <h1>Loading...</h1>;
