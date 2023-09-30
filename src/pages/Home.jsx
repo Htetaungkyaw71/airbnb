@@ -10,7 +10,6 @@ const Home = () => {
   console.log(data);
   return <div>
     <Navbar />
-    
   </div>;
 };
 

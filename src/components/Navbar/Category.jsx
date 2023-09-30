@@ -59,8 +59,8 @@ const Category = () =>
         },
     ]
     return (
-        <div className="">
-            <div className=" hidden md:grid grid-cols-10 px-5 lg:px-20">
+        <div className=" ">
+            <div className=" hidden md:grid grid-cols-10 px-5 lg:px-20 -z-0">
                 { data.map( category => (
                     <div key={ category.id } className=" flex flex-col justify-center items-center gap-2 cursor-pointer  group">
                         <img className=" w-[25px] h-[25px] lg:w-[35px] lg:h-[35px]" src={ category.photo } alt="" />
