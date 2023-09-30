@@ -1,12 +1,17 @@
-import Category from "./Category";
+/* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
+// import Category from "./Category";
 import Search from "./Search";
 import User from "./User";
 import airbnb from "./images/airbnb.png";
-const Navbar = () => {
+const Navbar = ({ children }) => {
   return (
     <div className="fixed px-5 z-10 top-0 w-full bg-white">
       {/* navbar */}
-      <div className=" flex items-center border-b-2 justify-center md:justify-between p-2 lg:p-4 xl:p-6">
+      <Link
+        to="/"
+        className=" flex items-center border-b-2 justify-center md:justify-between p-2 lg:p-4 xl:p-6"
+      >
         {/* logo */}
         <div className=" items-center gap-2 hidden xl:flex">
           <img src={airbnb} className="w-[50px] h-[50px]" alt="" />
@@ -16,10 +21,8 @@ const Navbar = () => {
         <Search />
         {/* user */}
         <User />
-      </div>
-      <div className=" pt-[20px] lg:pt-[40px]">
-        <Category />
-      </div>
+      </Link>
+      {children}
     </div>
   );
 };

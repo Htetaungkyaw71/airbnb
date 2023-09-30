@@ -1,12 +1,15 @@
 import Navbar from "../components/Navbar/Navbar";
 import Homecards from "../components/home/Homecards";
+import Category from "../components/Navbar/Category";
 
 const Home = () => {
   return (
-    <div>
-      <Navbar />
+    <>
+      <Navbar>
+        <Category />
+      </Navbar>
       <Homecards />
-    </div>
+    </>
   );
 };
 
