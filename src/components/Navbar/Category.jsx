@@ -68,7 +68,7 @@ const Category = () => {
     },
   ];
   return (
-    <div className="pt-[20px] lg:pt-[40px]">
+    <div>
       <div className=" hidden md:grid grid-cols-10 px-5 lg:px-20">
         {data.map((category) => (
           <Link
