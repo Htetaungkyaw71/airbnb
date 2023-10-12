@@ -5,6 +5,7 @@ import Reservations from "./pages/Reservations";
 import MyReservation from "./pages/MyReservation";
 import Favourites from "./pages/Favourites";
 import Myhome from "./pages/Myhome";
+import CategoryPage from "./pages/CategoryPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:id" element={<Detail />} />
+        <Route path="/category/:category" element={<CategoryPage />} />
         <Route path="/reservations" element={<Reservations />} />
         <Route path="/reservations/:id" element={<MyReservation />} />
         <Route path="/favourites" element={<Favourites />} />

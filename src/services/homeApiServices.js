@@ -17,9 +17,16 @@ export const homeApi = createApi({
       }),
       transformResponse: (response) => response,
     }),
+    getHomeWithCatgory: builder.query({
+      query: ({ category }) => ({
+        url: `/${category}`,
+        method: "GET",
+      }),
+      transformResponse: (response) => response,
+    }),
     getHomeDetail: builder.query({
-      query: (id) => ({
-        url: `/${id}`,
+      query: ({ id }) => ({
+        url: `property/detail/${id}`,
         method: "GET",
       }),
       transformResponse: (response) => response,
@@ -27,4 +34,8 @@ export const homeApi = createApi({
   }),
 });
 
-export const { useGetHomeQuery, useGetHomeDetailQuery } = homeApi;
+export const {
+  useGetHomeQuery,
+  useGetHomeDetailQuery,
+  useGetHomeWithCatgoryQuery,
+} = homeApi;
