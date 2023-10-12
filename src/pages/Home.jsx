@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar/Navbar";
 import Homecards from "../components/home/Homecards";
+import { useGetHomeQuery } from "../services/homeApiServices";
 
 const Home = () => {
   const { data, isLoading } = useGetHomeQuery({ page: 1, pageSize: 20 });
@@ -8,9 +9,6 @@ const Home = () => {
       .</h1>;
   }
   console.log(data);
-  return <div>
-    <Navbar />
-  </div>;
 
   return (
     <div>

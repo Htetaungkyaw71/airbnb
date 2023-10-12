@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {BsSearch} from 'react-icons/bs'
 const Search = ({setShowFilter,showFilter}) => {
 
