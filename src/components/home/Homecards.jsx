@@ -1,22 +1,24 @@
-import { Suspense, lazy } from "react";
 import useGethomes from "./custom_hooks/getAllhomes";
-import Skeleton from "./Skeleton";
+import CardSkeleton from "./CardSkeleton";
+import Card from "./Card";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { useEffect, useState } from "react";
 
 const Homecards = () => {
-  const Card = lazy(() => import("./Card"));
   const [allHomes, setPage, totalCount, isLoading] = useGethomes();
+  const [hasMore, setHasMore] = useState(true);
 
-  const handleMore = () => {
-    setPage((prev) => prev + 1);
-  };
+  useEffect(() => {
+    if (totalCount === allHomes.length) {
+      setHasMore(false);
+    }
+  }, [allHomes.length, totalCount]);
 
   if (isLoading) {
     return (
       <div className="mb-16">
         <div className="px-5 mb-10 mt-[250px] xl:px-10 gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <Skeleton key={`skeleton-${index}`} />
-          ))}
+          <CardSkeleton length={10} />
         </div>
       </div>
     );
@@ -24,22 +26,21 @@ const Homecards = () => {
   return (
     <div className="mb-16">
       <div className="px-5 mb-10 mt-[250px] xl:px-10 gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4">
-        {allHomes?.map((home) => (
-          <Suspense key={home.id} fallback={<Skeleton />}>
-            <Card {...home} />
-          </Suspense>
-        ))}
+        {allHomes?.map((home) => {
+          return <Card {...home} key={home.id} />;
+        })}
       </div>
-      {allHomes.length < totalCount && (
-        <div className="text-center py-10">
-          <button
-            onClick={handleMore}
-            className={`hover:scale-105 duration-500 p-3 bg-[#232323] rounded-full text-white font-semibold px-10 text-[20px]`}
-          >
-            See More
-          </button>
-        </div>
-      )}
+      <InfiniteScroll
+        dataLength={allHomes.length}
+        next={() => setPage((prev) => prev + 1)}
+        hasMore={hasMore}
+        loader={<h4 className="text-center">Loading...</h4>}
+        endMessage={
+          <p style={{ textAlign: "center" }}>
+            <b>Yay! You have seen it all</b>
+          </p>
+        }
+      ></InfiniteScroll>
     </div>
   );
 };
