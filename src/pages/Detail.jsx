@@ -8,6 +8,7 @@ import { LiaBedSolid } from "react-icons/lia";
 import { MdOutlineBathroom } from "react-icons/md";
 import { useState } from "react";
 import Map from "../components/Map";
+import Loader from "../components/Loader";
 
 const Detail = () => {
   const { id } = useParams();
@@ -20,7 +21,7 @@ const Detail = () => {
     setStatus(!status);
   };
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <Loader />;
   }
 
   const home = data?.data;
@@ -42,7 +43,7 @@ const Detail = () => {
   return (
     <div>
       <Navbar />
-      <div className="container mx-auto mt-[140px] grid gap-5 grid-cols-1 2xl:grid-cols-3">
+      <div className="container mx-auto mt-[250px] grid gap-5 grid-cols-1 2xl:grid-cols-3">
         <div className="col-span-2">
           <h1 className="text-gray-800 text-[35px] font-semibold ">{title}</h1>
           <div className="my-5">
@@ -105,7 +106,7 @@ const Detail = () => {
           </div>
         </div>
         <div className="flex justify-center mt-20">
-          <div className="border-2 w-[500px] p-10 sticky top-40 h-96  rounded-2xl shadow-xl">
+          <div className="border-2 w-[500px] p-10 sticky top-60 h-96 rounded-2xl shadow-xl">
             <h1 className="text-[30px] font-bold">
               ${price} <span className="text-[25px] font-normal">night</span>{" "}
             </h1>

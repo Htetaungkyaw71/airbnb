@@ -1,6 +1,6 @@
 import { Suspense, lazy } from "react";
 import { useGetHomeWithCatgoryQuery } from "../../services/homeApiServices";
-import Skeleton from "../home/Skeleton";
+import Skeleton from "./CardSkeleton";
 import { useParams } from "react-router-dom";
 
 const CategoryCard = () => {
