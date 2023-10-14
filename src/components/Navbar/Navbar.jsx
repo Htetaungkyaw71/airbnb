@@ -7,12 +7,11 @@ import Filter from "./filters/Filter";
 import { Link } from "react-router-dom";
 
 import MobileFilter from "./filters/MobileFilter";
-const Navbar = () =>
-{
-  const [ showFilter, setShowFilter ] = useState( false );
+const Navbar = () => {
+  const [showFilter, setShowFilter] = useState(false);
   return (
     <div className="w-screen fixed bg-transparent top-0 z-10">
-      {/* navbar */ }
+      {/* navbar */}
       <div className=" flex items-center bg-white border-b-2 justify-center md:justify-between p-2 lg:p-4 xl:p-6">
         {/* logo */}
         <Link to="/">
@@ -31,10 +30,14 @@ const Navbar = () =>
         <Category />
       </div>
       <div className=" hidden lg:block">
-        { showFilter && <Filter showFilter={ showFilter } setShowFilter={ setShowFilter } /> }
+        {showFilter && (
+          <Filter showFilter={showFilter} setShowFilter={setShowFilter} />
+        )}
       </div>
       <div className="block lg:hidden">
-        { showFilter && <MobileFilter showFilter={ showFilter } setShowFilter={ setShowFilter } /> }
+        {showFilter && (
+          <MobileFilter showFilter={showFilter} setShowFilter={setShowFilter} />
+        )}
       </div>
     </div>
   );

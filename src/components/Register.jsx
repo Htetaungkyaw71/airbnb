@@ -67,7 +67,7 @@ const Register = () => {
             Welcome to Airbnb
           </h1>
 
-          <form className="mt-4" onSubmit={handleSubmit(formSubmit)}>
+          <form className="mt-4" onSubmit={handleSubmit(formSubmit)} noValidate>
             <div className=" border-gray-400 w-full">
               {errors?.username?.message && (
                 <p className="p-2  text-red-500 rounded-xl font-[600] text-center my-2">
