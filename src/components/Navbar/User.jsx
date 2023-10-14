@@ -6,7 +6,7 @@ const User = () => {
   const [show,setshow] = useState(false)
   return (
     <div>
-     <div className=" hidden sm:flex items-center gap-5">
+     <div className=" hidden xl:flex items-center gap-5">
         <div className="">
             <button className=" px-6 py-3 rounded-full transition-all duration-300 text-[18px] font-[600] hover:bg-stone-100">Airbnb your home</button>
         </div>

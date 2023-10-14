@@ -35,11 +35,13 @@ const Card = ({
       </div>
 
       <div className="py-4">
-        <h1 className="text-[18px] xl:text-[20px]">{title?.slice(0, 35)}</h1>
-        <h1 className="text-[16px] xl:text-[18px] text-gray-500">
+        <h1 className="text-[18px] xl:text-[20px] font-semibold">
+          {title?.slice(0, 35)}
+        </h1>
+        <h1 className="text-[16px] xl:text-[18px] my-1 text-gray-500">
           {description?.slice(0, 20)}
         </h1>
-        <h1 className="text-[16px] xl:text-[18px] text-gray-500">
+        <h1 className="text-[16px] xl:text-[17px] my-1 text-gray-500">
           {start_date} - {end_date}
         </h1>
         <h2 className="font-bold text-[16px] xl:text-[19px] ">
