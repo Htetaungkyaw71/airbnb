@@ -11,6 +11,7 @@ import { MdOutlineBathroom } from "react-icons/md";
 import { useState } from "react";
 import Map from "../components/Map";
 import { useSelector } from "react-redux";
+import Loader from "../components/Loader";
 
 const Detail = () =>
 {
@@ -25,9 +26,9 @@ const Detail = () =>
     e.preventDefault();
     setStatus( !status );
   };
-  if ( isLoading )
-  {
-    return <h1>Loading...</h1>;
+
+  if (isLoading) {
+    return <Loader />;
   }
 
   const home = data?.data;
@@ -58,6 +59,7 @@ const Detail = () =>
         </div>
       </div>
       <div className=" mt-[20px] xl:mt-[180px] grid gap-5 grid-cols-1 2xl:grid-cols-3">
+   
         <div className="col-span-2">
           <h1 className="text-gray-800 text-[20px] lg:text-[30px] xl:text-[35px] lg:font-semibold">{ title }</h1>
           <div className="my-5">
@@ -122,6 +124,7 @@ const Detail = () =>
         {/* reservation */ }
         <div className=" hidden xl:flex justify-center mt-20">
           <div className="border-2 w-[500px] p-10 sticky top-40 h-96  rounded-2xl shadow-xl">
+
             <h1 className="text-[30px] font-bold">
               ${ price } <span className="text-[25px] font-normal">night</span>{ " " }
             </h1>

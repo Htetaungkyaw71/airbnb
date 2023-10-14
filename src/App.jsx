@@ -6,6 +6,8 @@ import MyReservation from "./pages/MyReservation";
 import Favourites from "./pages/Favourites";
 import Myhome from "./pages/Myhome";
 import CategoryPage from "./pages/CategoryPage";
+import CreateProperties from "./pages/CreateProperties";
+import { Protect } from "./services/Protect";
 
 function App() {
   return (
@@ -14,10 +16,51 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/:id" element={<Detail />} />
         <Route path="/category/:category" element={<CategoryPage />} />
-        <Route path="/reservations" element={<Reservations />} />
-        <Route path="/reservations/:id" element={<MyReservation />} />
-        <Route path="/favourites" element={<Favourites />} />
-        <Route path="/myhome" element={<Myhome />} />
+
+        {/* Need to Login  */}
+
+        <Route
+          path="/reservations"
+          element={
+            <Protect>
+              <Reservations />
+            </Protect>
+          }
+        />
+        <Route
+          path="/reservations/:id"
+          element={
+            <Protect>
+              <MyReservation />
+            </Protect>
+          }
+        />
+        <Route
+          path="/favourites"
+          element={
+            <Protect>
+              <Favourites />
+            </Protect>
+          }
+        />
+        <Route
+          path="/myhome"
+          element={
+            <Protect>
+              <Myhome />
+            </Protect>
+          }
+        />
+        <Route
+          path="/create_property"
+          element={
+            <Protect>
+              <CreateProperties />
+            </Protect>
+          }
+        />
+
+        {/* Need to Login  */}
       </Routes>
     </BrowserRouter>
   );

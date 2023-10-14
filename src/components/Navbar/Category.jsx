@@ -3,6 +3,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Link } from "react-router-dom";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const Category = () => {
   const data = [

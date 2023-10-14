@@ -30,7 +30,7 @@ const Card = ({
         </button>
         <img
           src={image}
-          className="h-[300px] xl:h-[330px] text-center bg-blue-400 rounded-xl w-full"
+          className="h-[300px] xl:h-[330px] text-center rounded-xl w-full"
         />
       </div>
 
