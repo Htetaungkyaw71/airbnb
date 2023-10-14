@@ -1,48 +1,62 @@
-
-/* .react-calendar {
-    font-family: Arial, sans-serif;
-    width: 600px;
-    margin: 0 auto;
-  } */
-  
-  .react-calendar__navigation {
-    color: black;
-    font-size: 20px;
-    display: flex;
-    padding: 40px;
-    justify-content: space-around;
-  }
-
-  .react-calendar__navigation__next2-button,
-  .react-calendar__navigation__prev2-button
-  {
-    display: none;
-  }
-  
-  
-  .react-calendar__month-view__weekdays{
-    color: black;
-    font-weight: 500;
-    font-size: 17px;
-    text-align: center;
-    text-underline-offset: 0;
-  }
-  
-  .react-calendar__tile {
-    width: 40px;
-    height: 49px;
-    border-radius: 100%;
-    margin: 3px!important;
-  }
-  .react-calendar__tile--active {
-    background-color: #FF385C !important;
-    color: white;
-    border: 2px solid black;
-    border-radius: 100%;
+/* Base styles for larger screens */
+.react-calendar__navigation {
+  color: black;
+  font-size: 20px;
+  display: flex;
+  padding: 40px;
+  justify-content: space-around;
 }
-  .react-calendar__tile--disabled {
-    background-color: white;
-    color: white;
-    cursor: not-allowed;
+
+.react-calendar__navigation__next2-button,
+.react-calendar__navigation__prev2-button {
+  display: none;
+}
+
+.react-calendar__month-view__weekdays {
+  color: black;
+  font-weight: 500;
+  font-size: 17px;
+  text-align: center;
+  text-underline-offset: 0;
+}
+
+.react-calendar__tile {
+  width: 40px;
+  height: 49px;
+  border-radius: 100%;
+  margin: 3px!important;
+}
+
+.react-calendar__tile--active {
+  background-color: #FF385C !important;
+  color: white;
+  border: 2px solid black;
+  border-radius: 100%;
+}
+
+.react-calendar__tile--disabled {
+  background-color: white;
+  color: white;
+  cursor: not-allowed;
+}
+
+/* Media query for screens smaller than 768px (typical mobile screens) */
+@media (max-width: 768px) {
+  .react-calendar__navigation {
+    padding: 20px; /* Decrease padding for smaller screens */
   }
-  
+
+  .react-calendar__month-view__weekdays {
+    font-size: 14px; /* Decrease font size for weekdays */
+  }
+
+  .react-calendar__tile {
+    width: 30px; /* Decrease tile width for smaller screens */
+    height: 39px; /* Decrease tile height for smaller screens */
+    margin: 2px!important;
+  }
+
+  .react-calendar__tile--active {
+    border: 1px solid black; /* Decrease border thickness for active tiles */
+  }
+}

@@ -49,7 +49,7 @@ const Region = () => {
       transition={{ duration: 0.5 }}
       className=""
     >
-      <div className=" w-[500px] ml-[300px] bg-white rounded-2xl shadow-xl">
+      <div className=" w-[400px] lg:w-[500px] mx-2 lg:ml-[300px] bg-white rounded-2xl shadow-xl">
         <h1 className=" text-[18px] font-bold p-6">Search By Region</h1>
         <div className=" grid grid-cols-3 gap-10 p-5">
           {data.map((region) => (
